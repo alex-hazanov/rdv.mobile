@@ -33,9 +33,10 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        $.ui.backButtonText = "Back";
-		$.ui.launch();
+		app.receivedEvent("deviceready");
     },
+	receivedEvent: function(eventType){
+	},
 	openScanner: function(){
 		cordova.plugins.barcodeScanner.scan(
 		  function (result) {
