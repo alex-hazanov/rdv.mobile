@@ -37,7 +37,7 @@ var app = {
     },
 	receivedEvent: function(eventType){
 	},
-	openScanner: function(){
+	scan: function(){
 		cordova.plugins.barcodeScanner.scan(
 		  function (result) {
 			  alert("We got a barcode\n" +
