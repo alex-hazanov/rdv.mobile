@@ -42,10 +42,11 @@
         embedpano({ swf: "viewer/krpano.swf", js: "viewer/krpano.js", xml: "viewer/krpano.xml", target: "pano", id:"krpano" });
         $("#info").html("Vals");
         window.addEventListener('deviceorientation', function (eventData) {
-            $("#info").html("A: " + eventData.alpha + "<br>B: " + eventData.beta + "<br>G: " + eventData.gamma);
+            var heading = app.smoothcompass(eventData.alpha);
+            $("#info").html("A: " + heading + "<br>B: " + eventData.beta + "<br>G: " + eventData.gamma);
             var krpano = document.getElementById("krpano");
-            krpano.set("view.hlookat", 360-eventData.alpha);
-	        krpano.set("view.vlookat", eventData.beta+90);
+            krpano.set("view.hlookat", 360 - heading);
+            krpano.set("view.vlookat", eventData.beta + 90);
         });
     </script>
 </body>

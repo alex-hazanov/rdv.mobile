@@ -18,36 +18,46 @@
  */
 var app = {
     // Application Constructor
-    initialize: function() {
+    initialize: function () {
         this.bindEvents();
     },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
+    bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-		app.receivedEvent("deviceready");
+    onDeviceReady: function () {
+        app.receivedEvent("deviceready");
     },
-	receivedEvent: function(eventType){
-	},
-	scan: function(){
-		cordova.plugins.barcodeScanner.scan(
+    receivedEvent: function (eventType) {
+    },
+    scan: function () {
+        cordova.plugins.barcodeScanner.scan(
 		  function (result) {
-			  alert("We got a barcode\n" +
+		      alert("We got a barcode\n" +
 					"Result: " + result.text + "\n" +
 					"Format: " + result.format + "\n" +
 					"Cancelled: " + result.cancelled);
-		  }, 
+		  },
 		  function (error) {
-			  alert("Scanning failed: " + error);
+		      alert("Scanning failed: " + error);
 		  }
 		);
-	}
+    },
+
+    smoothcompass: function (value) {
+        if (this.compassVal == undefined) {
+            this.compassVal = value;
+        }
+        else {
+            this.compassVal = this.compassVal + 0.2 * (value - this.compassVal);
+        }
+        return this.compassVal;
+    }
 };
