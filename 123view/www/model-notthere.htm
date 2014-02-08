@@ -44,8 +44,8 @@
         window.addEventListener('deviceorientation', function (eventData) {
             $("#info").html("A: " + eventData.alpha + "<br>B: " + eventData.beta + "<br>G: " + eventData.gamma);
             var krpano = document.getElementById("krpano");
-            krpano.set("view.hlookat", eventData.alpha);
-	        krpano.set("view.vlookat", eventData.beta);
+            //krpano.set("view.hlookat", eventData.alpha);
+	        //krpano.set("view.vlookat", eventData.beta);
         });
     </script>
 </body>
