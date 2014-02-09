@@ -6,6 +6,6 @@
 	<!-- view/fov settings -->
 	<view hlookat="0" vlookat="0" fovtype="VFOV" fov="90" fovmin="30" fovmax="150" limitview="auto" vlookatmin="-90" vlookatmax="+90" />
 
-	<plugin name="gyro" url="plugins/gyro.js" enabled="true" camroll="true" friction="0.5" velastic="0.2" devices="html5" keep="true" />
+	<plugin name="gyro" url="plugins/gyro.js" enabled="true" camroll="true" friction="0.9" velastic="0.2" devices="html5" keep="true" />
 
 </krpano>
