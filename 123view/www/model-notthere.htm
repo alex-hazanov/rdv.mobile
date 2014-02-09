@@ -44,9 +44,9 @@
         window.addEventListener('deviceorientation', function (eventData) {
             var heading = app.smoothcompass(Math.round(eventData.alpha));
             $("#info").html("A: " + heading + "<br>B: " + eventData.beta + "<br>G: " + eventData.gamma);
-            var krpano = document.getElementById("krpano");
-            krpano.set("view.hlookat", 360 - heading);
-            krpano.set("view.vlookat", 90 - eventData.beta);
+//            var krpano = document.getElementById("krpano");
+//            krpano.set("view.hlookat", 360 - heading);
+//            krpano.set("view.vlookat", 90 - eventData.beta);
         });
     </script>
 </body>
